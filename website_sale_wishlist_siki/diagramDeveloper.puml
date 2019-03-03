@@ -1,0 +1,53 @@
+@startuml
+
+
+class website_config_settings_extend {
+
+_inherit = website.config.settings
+_columns = social_instagram field related
+
+}
+
+website_config_settings_extend --|> res_config
+
+interface res_config{
+Name view = Website settings Boton Insta
+Model = website.config.settings
+InheritViews = website.view_website_config_settings
+-------
+xpath //tags group name=social // field = social_googleplus -> position after
+
+}
+
+class website__extend {
+
+_inherit = "website"
+_columns = social_instagram
+
+}
+
+website__extend <|-- website_config_settings_extend
+website__extend --|> website_views
+website__extend --|> website_templates
+
+interface website_views{
+
+Id = view_website_form__extend
+Name view = website.extend.form
+Model = website
+InheritViews = website.view_website_form
+-------
+
+}
+
+interface website_templates{
+
+id=footer_default_extend
+inherit=footer_default
+name="Footer Extend"
+
+xpath expr="//div[@id='footer']//div[@id='info']//a[@t-att-href='website.social_googleplus']"
+
+}
+
+@enduml
