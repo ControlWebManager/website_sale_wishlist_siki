@@ -33,5 +33,5 @@ List of modifications:
         'add_to_cart_siki',
     ],
     'installable': True,
-    'auto_install': False,
+    'application': False,
 }
