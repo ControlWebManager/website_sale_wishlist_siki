@@ -4,9 +4,9 @@ _Extensión de la App website_sale_wishlist_siki _
 
 ### Pre-requisitos 📋
 
-_ Extensión del Módulo website_sale_wishlist y add_to_cart_siki (requerido)_
-_ La extensión add_to_cart_siki es necesaria estar instalarla, ya que, utiliza una
-vista del módulo mencionado para estructurar correctamente el HTML
+_ Extensión Depende del Módulo website_sale_wishlist y add_to_cart_siki (requerido) _
+_ La extensión add_to_cart_siki es necesaria estar instalarla, ya que, el presente módulo utiliza una
+vista del módulo add_to_cart para estructurar correctamente el HTML
 
 ### Instalación 🔧
 
