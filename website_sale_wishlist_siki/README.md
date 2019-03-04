@@ -8,7 +8,7 @@ _ Extensión Depende del Módulo website_sale_wishlist y add_to_cart_siki (reque
 _ La extensión add_to_cart_siki es necesaria estar instalarla, ya que, el presente módulo utiliza una
 vista del módulo add_to_cart para estructurar correctamente el HTML
 
-![Alt text](/static/description/img//img.jpg?raw=true "Dependencia")
+![Alt text](website_sale_wishlist_siki/website_sale_wishlist_siki/static/description/img//dependencia.jpg?raw=true "Dependencia")
                 
 ### Instalación 🔧
 
