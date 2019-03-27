@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<data inherit_id="website_sale.products_item" customize_show="True" name="Add to Wishlist From List Extend">
+    <xpath expr="//form//section[@id='section_list']//div[@name='prod_qty_value_and_buttons']" position="before">
+           <t t-call="website_sale_wishlist.product_toggle">
+               <t t-set="extra_class" t-value="'btn-xs'"/>
+           </t>
+    </xpath>
+</data>
+
+<template id="list_not_add_to_cart_template"
+                  inherit_id="add_to_cart.products_item_inherited"
+                  name="Template list_not_add_to_cart">
+
+
+
+        </template>

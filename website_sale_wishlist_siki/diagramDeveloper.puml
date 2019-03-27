@@ -1,52 +1,63 @@
 @startuml
 
 
-class website_config_settings_extend {
 
-_inherit = website.config.settings
-_columns = social_instagram field related
+add_to_cart.products_item_inherited <|-- add_to_cart_siki.products_item_inherited_extend
 
-}
+interface add_to_cart.products_item_inherited{
 
-website_config_settings_extend --|> res_config
-
-interface res_config{
-Name view = Website settings Boton Insta
-Model = website.config.settings
-InheritViews = website.view_website_config_settings
--------
-xpath //tags group name=social // field = social_googleplus -> position after
-
-}
-
-class website__extend {
-
-_inherit = "website"
-_columns = social_instagram
-
-}
-
-website__extend <|-- website_config_settings_extend
-website__extend --|> website_views
-website__extend --|> website_templates
-
-interface website_views{
-
-Id = view_website_form__extend
-Name view = website.extend.form
-Model = website
-InheritViews = website.view_website_form
+id="products_item_inherited"
+inherit_id="website_sale.products_item"
+name="Add to Cart with Ease"
 -------
 
+<form action="/shop/cart/update_no_redirect"
+--|<div itemscope="itemscope" ...
+----|<div class="oe_product_image">
+----|<section> point de insertion
+
 }
 
-interface website_templates{
+interface add_to_cart_siki.products_item_inherited_extend{
 
-id=footer_default_extend
-inherit=footer_default
-name="Footer Extend"
+id="products_item_inherited_extend"
+inherit_id="add_to_cart.products_item_inherited
+name="Add to Cart with Ease Extend"
+-------
 
-xpath expr="//div[@id='footer']//div[@id='info']//a[@t-att-href='website.social_googleplus']"
+Conditional View Template
+
+--|view_list_template
+----|Add attribute to //form -> style="display: inline;" name="form-view_list"
+----|Add attribute to //section[1] -> style="float: left;
+----|Delete node prod_qty_value_and_buttons
+----|Move prod_qty_value_and_buttons and Section[2]
+--|view_form_template
+
+}
+
+add_to_cart_siki.view_list_template --|> add_to_cart_siki.products_item_inherited_extend
+add_to_cart_siki.view_form_template --|> add_to_cart_siki.products_item_inherited_extend
+
+interface add_to_cart_siki.view_list_template{
+
+name="view_list_template"
+-------
+
+<xpath form//div//section position after
+--|Create <section[2]
+--|Add Aattriute to //section[2]attriute id="section_list" style="padding-bottom: 5px !important; padding-top: 5px !important;"
+
+}
+
+interface add_to_cart_siki.view_form_template{
+
+name="view_form_template"
+-------
+
+<xpath form//div//section position after
+--|Create <section[2]
+--|Add Aattriute to //section[2]attriute id="section_list" style="padding-bottom: 5px !important; padding-top: 5px !important;"
 
 }
 

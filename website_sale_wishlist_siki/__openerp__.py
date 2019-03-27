@@ -22,6 +22,7 @@ List of modifications:
     * This module to work needs the installation of the add_to_cart_siki module 
  """,
     'data': [
+        'data/data.xml',
         'views/shop.xml',
 
     ],
@@ -30,6 +31,7 @@ List of modifications:
         'website',
         'website_sale',
         'website_sale_wishlist',
+        'add_to_cart',
         'add_to_cart_siki',
     ],
     'installable': True,
